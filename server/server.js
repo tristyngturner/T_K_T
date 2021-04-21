@@ -3,7 +3,9 @@ const app = express();
 const port = 3001;
 
 
-app.get('/api/','apiRoutes');
+app.get('/api', (req,res) => {
+    res.send('this is an api endpoint!')
+})
 
 app.use(express.static(__dirname +'build'));
 
