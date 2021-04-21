@@ -3,8 +3,20 @@ const app = express();
 const port = 3001;
 
 
-app.get('/api', (req,res) => {
-    res.send('this is an api endpoint!')
+app.get('/api/quizj', (req,res) => {
+    res.send('this is a Javascript api endpoint!')
+})
+app.get('/api/quizh', (req,res) => {
+    res.send('this is a HTML api endpoint!')
+})
+app.get('/api/quizc', (req,res) => {
+    res.send('this is a Command Line api endpoint!')
+})
+app.get('/api/quizg', (req,res) => {
+    res.send('this is a Git api endpoint!')
+})
+app.get('/api/quizcss', (req,res) => {
+    res.send('this is a CSS api endpoint!')
 })
 
 app.use(express.static(__dirname +'build'));
