@@ -1,11 +1,20 @@
 const express = require('express');
 const app = express();
 const port = 3001;
+const db = require('./models')
 
 
 app.get('/api/quizj', (req,res) => {
-    res.send('this is a Javascript api endpoint!')
+    console.log('this is a Javascript api endpoint!');
+    db.questions.findAll({where:{questionType:'js'}})
+        .then((results) =>{
+            results.forEach(function(index){
+                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+            })
+        })
+    
 })
+
 app.get('/api/quizh', (req,res) => {
     res.send('this is a HTML api endpoint!')
 })
