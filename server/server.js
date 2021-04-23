@@ -16,17 +16,41 @@ app.get('/api/quizj', (req,res) => {
 })
 
 app.get('/api/quizh', (req,res) => {
-    res.send('this is a HTML api endpoint!')
+    db.questions.findAll({where:{questionType:'html'}})
+        .then((results) =>{
+            results.forEach(function(index){
+                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+            })
+        })
 })
+
 app.get('/api/quizc', (req,res) => {
-    res.send('this is a Command Line api endpoint!')
+    db.questions.findAll({where:{questionType:'cli'}})
+        .then((results) =>{
+            results.forEach(function(index){
+                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+            })
+        })
 })
+
 app.get('/api/quizg', (req,res) => {
-    res.send('this is a Git api endpoint!')
+    db.questions.findAll({where:{questionType:'git'}})
+        .then((results) =>{
+            results.forEach(function(index){
+                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+            })
+        })
 })
+
 app.get('/api/quizcss', (req,res) => {
-    res.send('this is a CSS api endpoint!')
-})
+    db.questions.findAll({where:{questionType:'css'}})
+        .then((results) =>{
+            results.forEach(function(index){
+                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+            })
+        })
+    })
+
 
 app.use(express.static(__dirname +'build'));
 
@@ -37,4 +61,4 @@ app.get('*', (req, res) =>{
 
 app.listen(port,() => {
     console.log(`App listening to ${port}`);
-})
+});
