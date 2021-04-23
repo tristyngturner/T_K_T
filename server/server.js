@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3001;
 const db = require('./models')
+const qData = require('./permdata')
 
 
 app.get('/api/quizj', (req,res) => {
@@ -50,6 +51,13 @@ app.get('/api/quizcss', (req,res) => {
             })
         })
     })
+app.get('/api/test', (req,res) => {
+  qData.map(row =>{
+      console.log(row.question);
+  })
+    })
+
+
 
 
 app.use(express.static(__dirname +'build'));
