@@ -21,37 +21,37 @@ app.get('/api/quizj', (req,res) => {
 })
 
 app.get('/api/quizh', (req,res) => {
-    db.questions.findAll({where:{questionType:'html'}})
+    db.questions.findAll({where:{quizType:'html'}})
         .then((results) =>{
             results.forEach(function(index){
-                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
         })
 })
 
 app.get('/api/quizc', (req,res) => {
-    db.questions.findAll({where:{questionType:'cli'}})
+    db.questions.findAll({where:{quizType:'cli'}})
         .then((results) =>{
             results.forEach(function(index){
-                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
         })
 })
 
 app.get('/api/quizg', (req,res) => {
-    db.questions.findAll({where:{questionType:'git'}})
+    db.questions.findAll({where:{quizType:'git'}})
         .then((results) =>{
             results.forEach(function(index){
-                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
         })
 })
 
 app.get('/api/quizcss', (req,res) => {
-    db.questions.findAll({where:{questionType:'css'}})
+    db.questions.findAll({where:{quizType:'css'}})
         .then((results) =>{
             results.forEach(function(index){
-                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
         })
     })
