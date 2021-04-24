@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Quiz from '../components/Quiz';
+import Home from '../components/Home';
 
 class Header extends Component {
 
@@ -27,6 +30,10 @@ class Header extends Component {
                         </div>
                     </nav>
                 </div>
+                <Switch>
+                    <Route exact path='/' component={Home}></Route>
+                    <Route path="/Quiz" component={Quiz}></Route>
+        </Switch>
             </div>
         )
     }
