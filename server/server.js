@@ -4,6 +4,8 @@ const port = 3001;
 const db = require('./models')
 const qData = require('./permdata')
 
+app.use(express.json());
+
 
 app.get('/api/quizj', (req,res) => {
     console.log('this is a Javascript api endpoint!');
