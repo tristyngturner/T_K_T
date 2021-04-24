@@ -11,10 +11,10 @@ app.use(express.json());
 
 app.get('/api/quizj', (req,res) => {
     console.log('this is a Javascript api endpoint!');
-    db.questions.findAll({where:{questionType:'js'}})
+    db.Questions.findAll({where:{quizType:'js'}})
         .then((results) =>{
             results.forEach(function(index){
-                console.log(index.correctAnswer,index.incorrectAnswer, index.question);
+                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
         })
     
