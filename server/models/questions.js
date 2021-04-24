@@ -16,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Questions.init({
     quizType: DataTypes.STRING,
     question: DataTypes.STRING,
-    correctAnswer: DataTypes.STRING,
-    incorrectAnswer: DataTypes.STRING
+    answer1: DataTypes.STRING,
+    answer2: DataTypes.STRING,
+    correctAnswer: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Questions',

@@ -14,10 +14,13 @@ module.exports = {
       question: {
         type: Sequelize.STRING
       },
-      correctAnswer: {
+      answer1: {
         type: Sequelize.STRING
       },
-      incorrectAnswer: {
+      answer2: {
+        type: Sequelize.STRING
+      },
+      correctAnswer: {
         type: Sequelize.STRING
       },
       createdAt: {

@@ -1,14 +1,18 @@
 'use strict';
+const{qData} = require('../permdata');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Questions',[{
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'example@example.com',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }]);
+    return queryInterface.bulkInsert('Questions', qData.map(row => {
+      [{
+        questionType:row.questionType,
+        question:row.question,
+        answer1:row.answer1,
+        answer2:row.answer2,
+        correctAnswer:row.correctAnswer
+      }]
+
+    }));
   },
 
   down: async (queryInterface, Sequelize) => {

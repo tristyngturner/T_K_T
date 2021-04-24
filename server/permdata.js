@@ -49,4 +49,6 @@ const qData = [
     {quizType:'cli',question:'How do you remove a file on the command line?',answer1:'rm "file name"',answer2:'rem - "file name"', correctAnswer:''},
     {quizType:'cli',question:'What command moves a file to another folder?',answer1:'rl',answer2:'mv', correctAnswer:'mv'},
     {quizType:'cli',question:'What does the "clear" command do?',answer1:'clears all of the files from a repository',answer2:'clears the command line of previous activity log', correctAnswer:'clears the command line of previous activity log'}
-]
+];
+
+module.exports = {qData};

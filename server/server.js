@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3001;
 const db = require('./models')
-const qData = require('./permdata')
+const{qData} = require('./permdata');
+
+
 
 app.use(express.json());
 
@@ -58,8 +60,6 @@ app.get('/api/test', (req,res) => {
       console.log(row.question);
   })
     })
-
-
 
 
 app.use(express.static(__dirname +'build'));
