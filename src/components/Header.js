@@ -6,8 +6,8 @@ class Header extends Component {
 
     render () {
         return (
-            <div>
-                <p>Header component</p>
+            <div class="info">
+                <p id="header">Pick A Quiz, Any Quiz</p>
                 <div className="top-page">
                     <nav className="navbar navbar-inverse navbar-fixed-top">
                         <div className="container">
@@ -18,10 +18,10 @@ class Header extends Component {
                              </div>
                             <div className="single-page-nav sticky-wrapper" id="tmNavbar">
                                 <ul className="nav navbar-nav">
-                                    <li><a href="#section1">Home</a></li>
-                                    <li><a href="/Quiz">HTML</a></li>
-                                    <li><a href="#section3">CSS</a></li>
-                                    <li><a href="#section4">Javascript</a></li>
+                                    <a href="#section1" id="home">Home</a>
+                                    <a href="/Quiz" id="html">HTML</a>
+                                    <a href="#section3" id="css">CSS</a>
+                                    <a href="#section4" id="java">JavaScript</a>
                                 </ul>
                             </div>
                         </div>
