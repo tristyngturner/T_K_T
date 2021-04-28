@@ -31,8 +31,10 @@ _getQuiz = () => {
                                 <ul className="nav navbar-nav">
                                     <li><a href="#section1">Home</a></li>
                                     <li><a id="quiz" href="/Quiz/HTML" onClick={this._getQuiz}>HTML</a></li>
-                                    <li><a href="#section3">CSS</a></li>
-                                    <li><a href="#section4">Javascript</a></li>
+                                    <li><a href="/Quiz/CSS">CSS</a></li>
+                                    <li><a href="/Quiz/JavaScript">Javascript</a></li>
+                                    <li><a href="/Quiz/CLI">CLI</a></li>
+                                    <li><a href="/Quiz/GIT">GIT</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,6 +61,18 @@ _getQuiz = () => {
                     </Route>
                     <Route path="/Quiz/CSS">
                         <Quiz quizType="CSS"/>
+                        
+                    </Route>
+                    <Route path="/Quiz/Javascript">
+                        <Quiz quizType="Javascript"/>
+                        
+                    </Route>
+                    <Route path="/Quiz/CLI">
+                        <Quiz quizType="CLI"/>
+                        
+                    </Route>
+                    <Route path="/Quiz/GIT">
+                        <Quiz quizType="GIT"/>
                         
                     </Route>
                 </Switch>

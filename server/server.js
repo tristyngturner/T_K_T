@@ -9,9 +9,9 @@ const cors = require('cors')
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/quizj', (req,res) => {
-    console.log('this is a Javascript api endpoint!');
-    db.Questions.findAll({where:{quizType:'js'}})
+app.get('/api/quiz/JavaScript', (req,res) => {
+
+    db.Questions.findAll({where:{quizType:'javascript'}})
         .then((results) =>{
             let questions = []
             results.forEach(function(index){
@@ -21,7 +21,9 @@ app.get('/api/quizj', (req,res) => {
         })
 })
 
-app.get('/api/quizHTML', (req,res) => {
+
+app.get('/api/quiz/HTML', (req,res) => {
+
     db.Questions.findAll({where:{quizType:'html'}})
         .then((results) =>{
             let questions = []
@@ -32,37 +34,41 @@ app.get('/api/quizHTML', (req,res) => {
         })
 })
 
-app.get('/api/quizc', (req,res) => {
-    db.questions.findAll({where:{quizType:'cli'}})
+app.get('/api/quiz/CLI', (req,res) => {
+
+    db.Questions.findAll({where:{quizType:'cli'}})
         .then((results) =>{
+            let questions = []
             results.forEach(function(index){
-                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
+                questions.push({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
+            res.json({questions:questions})
         })
 })
 
-app.get('/api/quizg', (req,res) => {
-    db.questions.findAll({where:{quizType:'git'}})
+app.get('/api/quiz/GIT', (req,res) => {
+
+    db.Questions.findAll({where:{quizType:'git'}})
         .then((results) =>{
+            let questions = []
             results.forEach(function(index){
-                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
+                questions.push({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
+            res.json({questions:questions})
         })
 })
 
-app.get('/api/quizcss', (req,res) => {
-    db.questions.findAll({where:{quizType:'css'}})
+app.get('/api/quiz/CSS', (req,res) => {
+
+    db.Questions.findAll({where:{quizType:'css'}})
         .then((results) =>{
+            let questions = []
             results.forEach(function(index){
-                res.json({question:index.question,answer1:index.answer1,answer2:index.answer2})
+                questions.push({question:index.question,answer1:index.answer1,answer2:index.answer2})
             })
+            res.json({questions:questions})
         })
-    })
-app.get('/api/test', (req,res) => {
-  qData.map(row =>{
-      console.log(row.question);
-  })
-    })
+})
 
 
 app.use(express.static(__dirname +'build'));
