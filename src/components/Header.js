@@ -18,7 +18,10 @@ _getQuiz = () => {
 
     render () {
         return (
-            <div>
+
+            <div class="info">
+                <p id="header">Pick A Quiz, Any Quiz</p>
+
                 <div className="top-page">
                     <nav className="navbar navbar-inverse navbar-fixed-top">
                         <div className="container">
@@ -29,12 +32,12 @@ _getQuiz = () => {
                              </div>
                             <div className="single-page-nav sticky-wrapper" id="tmNavbar">
                                 <ul className="nav navbar-nav">
-                                    <li><a href="#section1">Home</a></li>
-                                    <li><a id="quiz" href="/Quiz/HTML" onClick={this._getQuiz}>HTML</a></li>
-                                    <li><a href="/Quiz/CSS">CSS</a></li>
-                                    <li><a href="/Quiz/JavaScript">Javascript</a></li>
-                                    <li><a href="/Quiz/CLI">CLI</a></li>
-                                    <li><a href="/Quiz/GIT">GIT</a></li>
+
+                                    <a href="#section1" id="home">Home</a>
+                                    <a href="/Quiz" id="html">HTML</a>
+                                    <a href="#section3" id="css">CSS</a>
+                                    <a href="#section4" id="java">JavaScript</a>
+
                                 </ul>
                             </div>
                         </div>
