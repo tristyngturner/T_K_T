@@ -34,43 +34,31 @@ _getQuiz = () => {
                                 <ul className="nav navbar-nav">
 
                                     <a href="#section1" id="home">Home</a>
-                                    <a href="/Quiz" id="html">HTML</a>
-                                    <a href="#section3" id="css">CSS</a>
-                                    <a href="#section4" id="java">JavaScript</a>
+                                    <a href="/quiz/HTML" id="html">HTML</a>
+                                    <a href="/quiz/css" id="css">CSS</a>
+                                    <a href="/quiz/Javascript" id="java">JavaScript</a>
 
                                 </ul>
                             </div>
                         </div>
                     </nav>
                 </div>
-
-                <form>
-                    <div id="question">Question</div>
-                
-                    <input type="radio" name="answer" value="answer1"></input>
-                    <label htmlFor="answer1" id="answer1" >Answer 1</label>
-                    <input type="radio" name="answer" value="answer2"></input>
-                    <label htmlFor="answer2" id="answer2">Answer 2</label><br/>
-                    <button id="nextButton">Next</button>
-                    
-                
-                </form>
                 <Switch>
                     <Route exact path='/' component={Home}></Route>
                     {/* <Route path="/Quiz" component={Quiz}></Route> */}
-                    <Route path="/Quiz/HTML">
+                    <Route path="/quiz/HTML">
                         <Quiz quizType="HTML"/>
                         
                     </Route>
-                    <Route path="/Quiz/CSS">
+                    <Route path="/quiz/CSS">
                         <Quiz quizType="CSS"/>
                         
                     </Route>
-                    <Route path="/Quiz/Javascript">
+                    <Route path="/quiz/Javascript">
                         <Quiz quizType="Javascript"/>
                         
                     </Route>
-                    <Route path="/Quiz/CLI">
+                    <Route path="/quiz/CLI">
                         <Quiz quizType="CLI"/>
                         
                     </Route>
