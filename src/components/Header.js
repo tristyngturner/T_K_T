@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Switch, Route} from 'react-router-dom';
 import Quiz from '../components/Quiz';
 import Home from '../components/Home';
 
@@ -19,7 +19,7 @@ _getQuiz = () => {
     render () {
         return (
 
-            <div class="info">
+            <div className="info">
                 <p id="header">Pick A Quiz, Any Quiz</p>
 
                 <div className="top-page">
@@ -33,10 +33,11 @@ _getQuiz = () => {
                             <div className="single-page-nav sticky-wrapper" id="tmNavbar">
                                 <ul className="nav navbar-nav">
 
-                                    <a href="#section1" id="home">Home</a>
-                                    <a href="/quiz/HTML" id="html">HTML</a>
-                                    <a href="/quiz/css" id="css">CSS</a>
-                                    <a href="/quiz/Javascript" id="java">JavaScript</a>
+                                    <a href="/quiz/GIT" key="key1" id="home">Git</a>
+                                    <a href="/quiz/HTML" key="key2" id="html">HTML</a>
+                                    <a href="/quiz/CSS" key="key3" id="css">CSS</a>
+                                    <a href="/quiz/Javascript" key="key4" id="java">JavaScript</a>
+                                    <a href="/quiz/CLI" key="key5" id="cli">CLI</a>
 
                                 </ul>
                             </div>
