@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 
 class Quiz extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            quizInfo: []
+        }
+    }
 
     _getInfo = () => {
-        fetch (`http://localhost:3001/api/quiz${this.props.quizType}`)
+        // let quizInfo = [];
+        fetch (`http://localhost:3001/api/quiz/${this.props.quizType}`)
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => 
+                this.setState({
+                    quizInfo: data.questions
+                })
+            )
+          
     }
 
     componentDidMount() {
@@ -15,16 +27,23 @@ class Quiz extends Component {
     render () {
         return (
             <div>
+                <div key={this.props.quiztype} id="question">{this.props.quizType} Quiz</div>
                 <form>
-                    <div id="question">{this.props.quizType} Question</div>
-                
-                    <input type="radio" name="answer" value="answer1"></input>
-                    <label htmlFor="answer1" id="answer1" >Answer 1</label>
-                    <input type="radio" name="answer" value="answer2"></input>
-                    <label htmlFor="answer2" id="answer2">Answer 2</label><br/>
-                    <button id="nextButton">Next</button>
+                {this.state.quizInfo.map((question, index) => {
+                    return (
+                        <div key={index}>
+                            <div key={question.question}>{question.question}</div>
+                            <input type="radio" key={question.answer1} name={index} value="answer1"></input>
+                            <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
+                            <input type="radio" key={question.answer2} name={index} value="answer2"></input>
+                            <label htmlFor="answer2" id="answer2">{question.answer2}</label><br/>
+                            
+                        </div>
+                    )
+                })}
                     
-                
+                    
+                <button key="submit">submit button</button>
                 </form>
             </div>
             

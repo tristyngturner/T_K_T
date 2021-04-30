@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Switch, Route} from 'react-router-dom';
 import Quiz from '../components/Quiz';
 import Home from '../components/Home';
 
@@ -19,7 +19,7 @@ _getQuiz = () => {
     render () {
         return (
 
-            <div class="info">
+            <div className="info">
                 <p id="header">Pick A Quiz, Any Quiz</p>
 
                 <div className="top-page">
@@ -33,44 +33,33 @@ _getQuiz = () => {
                             <div className="single-page-nav sticky-wrapper" id="tmNavbar">
                                 <ul className="nav navbar-nav">
 
-                                    <a href="#section1" id="home">Home</a>
-                                    <a href="/Quiz" id="html">HTML</a>
-                                    <a href="#section3" id="css">CSS</a>
-                                    <a href="#section4" id="java">JavaScript</a>
+                                    <a href="/quiz/GIT" key="key1" id="home">Git</a>
+                                    <a href="/quiz/HTML" key="key2" id="html">HTML</a>
+                                    <a href="/quiz/CSS" key="key3" id="css">CSS</a>
+                                    <a href="/quiz/Javascript" key="key4" id="java">JavaScript</a>
+                                    <a href="/quiz/CLI" key="key5" id="cli">CLI</a>
 
                                 </ul>
                             </div>
                         </div>
                     </nav>
                 </div>
-
-                <form>
-                    <div id="question">Question</div>
-                
-                    <input type="radio" name="answer" value="answer1"></input>
-                    <label htmlFor="answer1" id="answer1" >Answer 1</label>
-                    <input type="radio" name="answer" value="answer2"></input>
-                    <label htmlFor="answer2" id="answer2">Answer 2</label><br/>
-                    <button id="nextButton">Next</button>
-                    
-                
-                </form>
                 <Switch>
                     <Route exact path='/' component={Home}></Route>
                     {/* <Route path="/Quiz" component={Quiz}></Route> */}
-                    <Route path="/Quiz/HTML">
+                    <Route path="/quiz/HTML">
                         <Quiz quizType="HTML"/>
                         
                     </Route>
-                    <Route path="/Quiz/CSS">
+                    <Route path="/quiz/CSS">
                         <Quiz quizType="CSS"/>
                         
                     </Route>
-                    <Route path="/Quiz/Javascript">
+                    <Route path="/quiz/Javascript">
                         <Quiz quizType="Javascript"/>
                         
                     </Route>
-                    <Route path="/Quiz/CLI">
+                    <Route path="/quiz/CLI">
                         <Quiz quizType="CLI"/>
                         
                     </Route>

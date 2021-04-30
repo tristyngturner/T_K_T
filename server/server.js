@@ -9,9 +9,9 @@ const cors = require('cors')
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/quiz/JavaScript', (req,res) => {
+app.get('/api/quiz/Javascript', (req,res) => {
 
-    db.Questions.findAll({where:{quizType:'javascript'}})
+    db.Questions.findAll({where:{quizType:'js'}})
         .then((results) =>{
             let questions = []
             results.forEach(function(index){
