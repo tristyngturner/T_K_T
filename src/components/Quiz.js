@@ -9,17 +9,17 @@ class Quiz extends Component {
     }
 
     _handleRadioButton = (e) => {
-        e.preventDefault();
-        console.log(e);
-        let userSelection = e.target.innerHTML;
-        fetch('https://localhost:3001/api/answers',{
+
+        let userSelection = e.target.value;
+        fetch('http://localhost:3001/api/correctanswers',{
             headers:{
-                'userSelection':userSelection
-            },.then(response => response.json())
-            .then(data => console.log(data));
+                'userSelection':userSelection}
+            }).then(response => response.json())
+            .then(data => console.log(data))
     }
+
     _getInfo = () => {
-        // let quizInfo = [];
+
         fetch (`http://localhost:3001/api/quiz/${this.props.quizType}`)
             .then(response => response.json())
             .then(data => 
@@ -40,16 +40,29 @@ class Quiz extends Component {
                 <div key={this.props.quiztype} id="question">{this.props.quizType} Quiz</div>
                 <form>
                 {this.state.quizInfo.map((question, index) => {
+                    const number = Math.random()
+                    if (number <= 0.5) {
+                        return (
+                            <div key={index}>
+                                <div key={question.question}>{question.question}</div>
+                                <input type="radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+                                <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
+                                <input type="radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                                <label htmlFor="answer2" id="answer2">{question.answer2}</label><br/>
+                                
+                            </div>
+                        )
+                    } else {
                     return (
                         <div key={index}>
                             <div key={question.question}>{question.question}</div>
-                            <input type="radio" key={question.answer1} name={index} value="answer1" onClick={this._handleRadioButton}></input>
+                            <input type="radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                            <label htmlFor="answer2" id="answer2">{question.answer2}</label>
+                            <input type="radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
                             <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
-                            <input type="radio" key={question.answer2} name={index} value="answer2"></input>
-                            <label htmlFor="answer2" id="answer2">{question.answer2}</label><br/>
-                            
                         </div>
-                    )
+                     )
+                    }
                 })}
                     
                     

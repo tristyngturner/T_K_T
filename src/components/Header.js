@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Switch, Route} from 'react-router-dom';
 import Quiz from '../components/Quiz';
 import Home from '../components/Home';
 
@@ -19,7 +19,7 @@ _getQuiz = () => {
     render () {
         return (
 
-            <div class="info">
+            <div className="info">
                 <p id="header">Pick A Quiz, Any Quiz</p>
 
                 <div className="top-page">
