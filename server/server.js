@@ -70,17 +70,17 @@ app.get('/api/quiz/CSS', (req,res) => {
         })
 })
 
-app.get('/api/correctAnswers',(req,res) =>{
-    let userAnswer = req.header;
-    for( i=0; i<db.Questions.length;i++){
-        if(db.Questions[i].correctAnswer == userAnswer){
-            res.json({isCorrect:true})
-            return
-        }if(!userAnswer || db.Questions[i].correctAnswer !== userAnswer){
-            res.json({errorMessage:'Answer is incorrect. Someone needs to google more!',isCorrect:false})
-            return
+app.get('/api/correctanswers',(req,res) =>{
+    let userAnswer = req.header('userSelection');
+    console.log(userAnswer)
+    db.Questions.findOne({
+        where: {
+            correctAnswer: userAnswer
         }
-    } return
+    })
+    .then((results) => {
+        console.log(results)
+    })
 })
 
 
