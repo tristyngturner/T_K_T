@@ -80,7 +80,14 @@ app.get('/api/correctanswers',(req,res) =>{
     })
     .then((results) => {
         console.log(results)
+        if(results){
+            res.json({isCorrect:true})
+        } else{
+            res.json({isCorrect:false})
+        }
+        
     })
+    
 })
 
 
