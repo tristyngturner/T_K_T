@@ -70,6 +70,19 @@ app.get('/api/quiz/CSS', (req,res) => {
         })
 })
 
+app.get('/api/correctAnswers',(req,res) =>{
+    let userAnswer = req.header;
+    for( i=0; i<db.Questions.length;i++){
+        if(db.Questions[i].correctAnswer == userAnswer){
+            res.json({isCorrect:true})
+            return
+        }if(!userAnswer || db.Questions[i].correctAnswer !== userAnswer){
+            res.json({errorMessage:'Answer is incorrect. Someone needs to google more!',isCorrect:false})
+            return
+        }
+    } return
+})
+
 
 app.use(express.static(__dirname +'build'));
 
