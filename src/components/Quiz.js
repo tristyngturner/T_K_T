@@ -15,7 +15,10 @@ class Quiz extends Component {
             headers:{
                 'userSelection':userSelection}
             }).then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data);
+            });
+            return;
     }
 
     _getInfo = () => {
@@ -43,7 +46,7 @@ class Quiz extends Component {
                     const number = Math.random()
                     if (number <= 0.5) {
                         return (
-                            <div key={index}>
+                            <div key={index} id='questionContainer'>
                                 <div key={question.question}>{question.question}</div>
                                 <input type="radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
                                 <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
