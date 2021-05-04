@@ -20,26 +20,45 @@ _getQuiz = () => {
         return (
 
             <div className="info">
-                <p id="header">Pick A Quiz, Any Quiz</p>
+                <h1 id="header">What The HTML?!</h1>
+                <p id="paragraph1">Learning to be a great developer can be tough, and might even make you feel like you're
+                losing your mind at times...</p>
+                <p id="paragraph2">Luckily our quizzes are here to give your brain a fun break and help you practice what you've learned so far!</p> 
 
                 <div className="top-page">
-                    <nav className="navbar navbar-inverse navbar-fixed-top">
+                    <nav id="navbar" className="navbar navbar-inverse navbar-fixed-top">
                         <div className="container">
                             <div className="navbar-header">
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                              </div>
-                            <div className="single-page-nav sticky-wrapper" id="tmNavbar">
-                                <ul className="nav navbar-nav">
-
-                                    <a href="#section1" id="home">Home</a>
-                                    <a href="/quiz/HTML" id="html">HTML</a>
-                                    <a href="/quiz/css" id="css">CSS</a>
-                                    <a href="/quiz/Javascript" id="java">JavaScript</a>
-
-                                </ul>
+                             <div class= "d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="first">
+                                <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                                    <a href="/quiz/HTML" id="html">HTML</a> 
+                                </div>
                             </div>
+                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="second">
+                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                                    <a href="/quiz/css" id="css">CSS</a>
+                                </div>
+                            </div>
+                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="third">
+                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                                    <a href="/quiz/Javascript" id="java">JavaScript</a>
+                                </div>
+                            </div>
+                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="fourth">
+                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                                    <a href="/quiz/CLI" id="cli">CLI</a>
+                                </div>
+                            </div>
+                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="fifth">
+                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                                    <a href="/quiz/GIT" id="git">Git</a>
+                                </div>
+                            </div>
+                            
                         </div>
                     </nav>
                 </div>
