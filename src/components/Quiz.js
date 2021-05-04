@@ -17,15 +17,17 @@ class Quiz extends Component {
             }).then(response => response.json())
             .then(data => {
                 console.log(data);
+                // let id = data.questions.id
                 if(data.isCorrect === true){
                     console.log('green');
+                    e.target.parentElement.style.color = '#00FF00'
                 }
                 if(data.isCorrect === false){
-                    document.getElementById('question').style.color='FF0000';
-                    
+                    console.log('red');
+                    e.target.parentElement.style.color = '#FF0000'
                 }
             });
-            return;
+        return;
     }
 
     _getInfo = () => {
@@ -37,7 +39,6 @@ class Quiz extends Component {
                     quizInfo: data.questions
                 })
             )
-          
     }
 
     componentDidMount() {
