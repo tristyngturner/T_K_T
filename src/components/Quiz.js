@@ -9,7 +9,7 @@ class Quiz extends Component {
     }
 
     _handleRadioButton = (e) => {
-
+        console.log(e);
         let userSelection = e.target.value;
         fetch('http://localhost:3001/api/correctanswers',{
             headers:{
@@ -17,6 +17,13 @@ class Quiz extends Component {
             }).then(response => response.json())
             .then(data => {
                 console.log(data);
+                if(data.isCorrect === true){
+                    console.log('green');
+                }
+                if(data.isCorrect === false){
+                    document.getElementById('question').style.color='FF0000';
+                    
+                }
             });
             return;
     }
