@@ -39,29 +39,36 @@ class Quiz extends Component {
 
     render () {
         return (
-            <div>
+            <div className="questionContainer">
                 <div key={this.props.quiztype} id="question">{this.props.quizType} Quiz</div>
                 <form>
                 {this.state.quizInfo.map((question, index) => {
                     const number = Math.random()
                     if (number <= 0.5) {
                         return (
-                            <div key={index} id='questionContainer'>
-                                <div key={question.question}>{question.question}</div>
-                                <input type="radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+
+
+                            <div class= "d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" key={index}>
+                            <div class ="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"></div>
+                            <br></br>
+                                <div id="question" key={question.question}>{question.question}</div>
+                                <input type="radio" class="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+
                                 <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
-                                <input type="radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
-                                <label htmlFor="answer2" id="answer2">{question.answer2}</label><br/>
+                                <input type="radio" class="option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                                <label htmlFor="answer2" id="answer2">{question.answer2}</label>
                                 
                             </div>
                         )
                     } else {
                     return (
-                        <div key={index}>
-                            <div key={question.question}>{question.question}</div>
-                            <input type="radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                        <div class= "d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" key={index}>
+                        <div class ="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"></div>
+                        <br></br>
+                            <div id="question2" key={question.question}>{question.question}</div>
+                            <input type="radio" class= "option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
                             <label htmlFor="answer2" id="answer2">{question.answer2}</label>
-                            <input type="radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+                            <input type="radio" class="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
                             <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
                         </div>
                      )
