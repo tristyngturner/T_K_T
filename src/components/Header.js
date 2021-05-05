@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Switch, Route} from 'react-router-dom';
 import Quiz from '../components/Quiz';
-import Home from '../components/Home';
-import coin from '../images/coin2.gif';
 
 class Header extends Component {
 
