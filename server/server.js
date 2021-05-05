@@ -70,12 +70,12 @@ app.get('/api/quiz/CSS', (req,res) => {
         })
 })
 
-app.get('/api/correctanswers',(req,res) =>{
-    let userAnswer = req.header('userSelection');
-    console.log(userAnswer)
+app.post('/api/correctanswers',(req,res) =>{
+    let userAnswer = req.body;
+    console.log(userAnswer.userSelection)
     db.Questions.findOne({
         where: {
-            correctAnswer: userAnswer
+            correctAnswer: userAnswer.userSelection
         }
     })
     .then((results) => {
@@ -87,6 +87,11 @@ app.get('/api/correctanswers',(req,res) =>{
         }
     })
     
+})
+
+app.post('/api/submit', (req,res) => {
+    console.log(req.body);
+    res.send(req.body);
 })
 
 

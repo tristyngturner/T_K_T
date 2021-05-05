@@ -33,28 +33,28 @@ _getQuiz = () => {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                              </div>
-                             <div class= "d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="first">
-                                <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                             <div className= "d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" id="first">
+                                <div className="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
                                     <a href="/quiz/HTML" id="html">HTML</a> 
                                 </div>
                             </div>
-                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="second">
-                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                            <div className= "p-3 p-md-5 m-md-3 text-center bg-light" id="second">
+                                <div className="col-md-5 p-lg-5 mx-auto my-5">
                                     <a href="/quiz/css" id="css">CSS</a>
                                 </div>
                             </div>
-                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="third">
-                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                            <div className= "p-3 p-md-5 m-md-3 text-center bg-light" id="third">
+                                <div className="col-md-5 p-lg-5 mx-auto my-5">
                                     <a href="/quiz/Javascript" id="java">JavaScript</a>
                                 </div>
                             </div>
-                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="fourth">
-                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                            <div className= "p-3 p-md-5 m-md-3 text-center bg-light" id="fourth">
+                                <div className="col-md-5 p-lg-5 mx-auto my-5">
                                     <a href="/quiz/CLI" id="cli">CLI</a>
                                 </div>
                             </div>
-                            <div class= "p-3 p-md-5 m-md-3 text-center bg-light" id="fifth">
-                                <div class="col-md-5 p-lg-5 mx-auto my-5">
+                            <div className= "p-3 p-md-5 m-md-3 text-center bg-light" id="fifth">
+                                <div className="col-md-5 p-lg-5 mx-auto my-5">
                                     <a href="/quiz/GIT" id="git">Git</a>
                                 </div>
                             </div>
@@ -63,8 +63,8 @@ _getQuiz = () => {
                     </nav>
                 </div>
                 <Switch>
-                    <Route exact path='/' component={Home}></Route>
-                    {/* <Route path="/Quiz" component={Quiz}></Route> */}
+                    {/* <Route exact path='/' component={Home}></Route>
+                    <Route path="/Quiz" component={Quiz}></Route> */}
                     <Route path="/quiz/HTML">
                         <Quiz quizType="HTML"/>
                         
