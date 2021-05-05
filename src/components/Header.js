@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Switch, Route} from 'react-router-dom';
 import Quiz from '../components/Quiz';
 import Home from '../components/Home';
+import coin from '../images/coin2.gif';
 
 class Header extends Component {
 
@@ -21,6 +22,7 @@ _getQuiz = () => {
 
             <div className="info">
                 <h1 id="header">What The HTML?!</h1>
+               
                 <p id="paragraph1">Learning to be a great developer can be tough, and might even make you feel like you're
                 losing your mind at times...</p>
                 <p id="paragraph2">Luckily our quizzes are here to give your brain a fun break and help you practice what you've learned so far!</p> 
