@@ -83,7 +83,7 @@ class Quiz extends Component {
                 })}
                     
                     
-                <button key="submit">submit button</button>
+                <button id="submit" key="submit">Submit</button>
                 </form>
             </div>
             
