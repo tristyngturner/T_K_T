@@ -5,19 +5,31 @@
     "database": "what_the",
     "host": "127.0.0.1",
     "dialect": "postgres"
+   
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "postgres",
+    "password": "postgres",
+    "database": "what_the",
+    "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "postgres",
+    "password": "postgres",
+    "database": "what_the",
+    "host": "localhost",
+    "dialect": "postgres",
+    "dialectOptions":{
+      "ssl":{
+        "require":true,
+        "rejectUnauthorized":false
+      
+      },
+      "keepAlive":true
+     
+    },
+    "ssl":true,
+    "use_env_variable":"DATABASE_URL"
   }
 }
