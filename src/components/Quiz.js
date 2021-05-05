@@ -95,7 +95,7 @@ class Quiz extends Component {
                     
                     
 
-                <button id="submit" key="submit">Submit</button>
+                <button id="submit" key="submit" onClick={this._handleSubmit}>Submit</button>
                 </form>
             </div>
             
