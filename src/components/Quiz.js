@@ -12,7 +12,7 @@ class Quiz extends Component {
     _handleRadioButton = (e) => {
         console.log(e);
         let userSelection = e.target.value;
-        fetch('http://localhost:3001/api/correctanswers', {
+        fetch('/api/correctanswers', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ class Quiz extends Component {
 
     _getInfo = () => {
 
-        fetch (`http://localhost:3001/api/quiz/${this.props.quizType}`)
+        fetch (`/api/quiz/${this.props.quizType}`)
             .then(response => response.json())
             .then(data => 
                 this.setState({
