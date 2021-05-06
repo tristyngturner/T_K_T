@@ -9,7 +9,7 @@ _getQuiz = () => {
         e.preventDefault();
         let urlValue = e.target.innerHTML
         console.log(urlValue)
-        fetch (`http://localhost:3001/api/quiz`+urlValue)
+        fetch (`/api/quiz`+urlValue)
         .then(response => response.json())
         .then(data => console.log(data))
     })
