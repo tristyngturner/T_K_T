@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 const db = require('./models')
 const{qData} = require('./permdata');
 const cors = require('cors')
@@ -102,6 +102,6 @@ app.get('*', (req, res) =>{
 })
 
 
-app.listen(port,() => {
+app.listen(port, () => {
     console.log(`App listening to ${port}`);
 });
