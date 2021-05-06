@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
-const db = require('./models')
-const{qData} = require('./permdata');
+const db = require('./server/models')
+const{qData} = require('./server/permdata');
 const cors = require('cors')
 
 
