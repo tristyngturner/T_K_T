@@ -63,8 +63,7 @@ _getQuiz = () => {
                     </nav>
                 </div>
                 <Switch>
-                    {/* <Route exact path='/' component={Home}></Route>
-                    <Route path="/Quiz" component={Quiz}></Route> */}
+                    
                     <Route path="/quiz/HTML">
                         <Quiz quizType="HTML"/>
                         

@@ -177,7 +177,7 @@ a {
 
 .questionContainer {
   font-family: 'Londrina Solid', cursive;
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   letter-spacing: .2vw;
   font-weight: bold;
   color:white;
@@ -190,8 +190,27 @@ a {
   padding: 2vw;
   background:black;
   opacity: 90%;
+}
 
+@media only screen and (max-width: 480px) {
+  .questionContainer, 
+  .footer2,
+  .submit {
+    font-size: large;
+  }
 
+  #paragraph1,
+  #paragraph2 {
+    border-radius: 15px;
+  }
+
+  /* .submit {
+    font-size: large;
+    margin-top:2vw;
+    width: 10vw;
+    border-radius: 2vw;
+    height: 8vh;
+  } */
 }
 
 #question {
@@ -322,8 +341,6 @@ a {
   max-width:20%;
   padding:1vw;
   border-radius: 2vw;
-  
-  
 }
 
 
