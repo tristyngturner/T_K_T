@@ -36,6 +36,17 @@ class Quiz extends Component {
     }
     _handleSubmit = (e) =>{
         e.preventDefault();
+        // fetch('http://localhost:3001/api/submit', {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //       },
+        //     //   body: 
+        // })
+        // .then((result) => {
+        //     console.log(result)
+        // })
+        
         console.log('submitted');
         alert('submitted!')
     }
@@ -70,10 +81,10 @@ class Quiz extends Component {
                             <div className ="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"></div>
                             <br></br>
                                 <div id="question" key={question.question}>{question.question}</div>
-                                <input type="radio" class="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+                                <input type="radio" className="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
 
                                 <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
-                                <input type="radio" class="option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                                <input type="radio" className="option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
                                 <label htmlFor="answer2" id="answer2">{question.answer2}</label>
                                 
                             </div>
@@ -84,9 +95,9 @@ class Quiz extends Component {
                         <div className ="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden"></div>
                         <br></br>
                             <div id="question2" key={question.question}>{question.question}</div>
-                            <input type="radio" class= "option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
+                            <input type="radio" className= "option-input radio" key={question.answer2} name={index} value={question.answer2} onClick={this._handleRadioButton}></input>
                             <label htmlFor="answer2" id="answer2">{question.answer2}</label>
-                            <input type="radio" class="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
+                            <input type="radio" className="option-input radio" key={question.answer1} name={index} value={question.answer1} onClick={this._handleRadioButton}></input>
                             <label htmlFor="answer1" id="answer1" >{question.answer1}</label>
                         </div>
                      )
@@ -95,7 +106,7 @@ class Quiz extends Component {
                     
                     
 
-                <button id="submit" key="submit" onClick={this._handleSubmit}>Submit</button>
+                <button id="submit" className="submit" key="submit" onClick={this._handleSubmit}>Submit</button>
                 </form>
             </div>
             
